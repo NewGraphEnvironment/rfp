@@ -1,11 +1,22 @@
 Package: rfp
-Title: What the Package Does (One Line, Title Case)
+Title: Reproducable Field Projects for British Columbia
 Version: 0.0.0.9000
 Authors@R: 
     person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: Build and document QGIS projects as reproducably as possible.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1
+Imports:
+    bcdata,
+    cli,
+    dplyr,
+    magrittr,
+    purrr,
+    stringr,
+    tibble
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
