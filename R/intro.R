@@ -1,5 +1,4 @@
 .onAttach <- function(libname, pkgname) {
-  # Updated list of quotes with new selections for ASAP Rocky and John Lennon
   quotes <- c(
     "\n 'Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution.' - Albert Einstein",
     "\n 'Peace is not something you wish for; it's something you make, something you do, something you are, and something you give away.' - John Lennon",
@@ -19,9 +18,9 @@
     "\n 'Music is my way of communicating about the world, about the human condition from my perspective.' - El-P",
     "\n 'I believe in the idea that art can help to create a more empathetic and kinder world.' - El-P",
 
-    "\n 'It’s likely that machines will be smarter than us before the end of the century—not just at chess or trivia questions but at just about everything, from mathematics and engineering to science and medicine.' - Gary Marcus",
+    "\n 'It's likely that machines will be smarter than us before the end of the century-not just at chess or trivia questions but at just about everything, from mathematics and engineering to science and medicine.' - Gary Marcus",
     "\n 'Our intelligence is what makes us human, and AI is an extension of that quality.' - Yann LeCun",
-    "\n 'As a technologist, I see how AI and the fourth industrial revolution will impact every aspect of people’s lives.' - Fei-Fei Li",
+    "\n 'As a technologist, I see how AI and the fourth industrial revolution will impact every aspect of people's lives.' - Fei-Fei Li",
     "\n 'AI will probably most likely lead to the end of the world, but in the meantime, there'll be great companies.' - Sam Altman",
     "\n 'The real risk with AI isn't malice but competence. A superintelligent AI will be extremely good at accomplishing its goals, and if those goals aren't aligned with ours, we're in trouble.' - Stephen Hawking",
     "\n 'I have always been convinced that the only way to get artificial intelligence to work is to do the computation in a way similar to the human brain.' - Geoffrey Hinton",
