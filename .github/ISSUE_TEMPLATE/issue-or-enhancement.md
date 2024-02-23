@@ -1,6 +1,6 @@
 ---
-name: Custom New Graph
-about: Describe this issue template's purpose here.
+name: Issue or Enhancement
+about: Descriptive Title Goes Here with Keywords
 title: ''
 labels: ''
 assignees: ''
