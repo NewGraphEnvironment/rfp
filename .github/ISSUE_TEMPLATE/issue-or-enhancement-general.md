@@ -1,6 +1,6 @@
 ---
-name: Issue or Enhancement
-about: Descriptive Title Goes Here with Keywords
+name: Issue or Enhancement General
+about: 'This is a first crack at an issue template '
 title: ''
 labels: ''
 assignees: ''
