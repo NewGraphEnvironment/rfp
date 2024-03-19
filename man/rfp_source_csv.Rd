@@ -28,4 +28,8 @@ urls_csv <- c(
 rfp_source_csv(path_gpkg, urls_csv)
 }
 }
+\seealso{
+Other source: 
+\code{\link{rfp_source_url}()}
+}
 \concept{source}
