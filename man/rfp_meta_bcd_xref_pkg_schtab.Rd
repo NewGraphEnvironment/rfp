@@ -24,6 +24,7 @@ schema.table for a dataset downloaded from the wms service.
 }
 \seealso{
 Other meta bcdata: 
-\code{\link{rfp_meta_bcd_xref}()}
+\code{\link{rfp_meta_bcd_xref}()},
+\code{\link{rfp_meta_bcd_xref_col_comments}()}
 }
 \concept{meta bcdata}

@@ -14,6 +14,8 @@
 #'
 #' @return A tibble with information about the column if it exists. Information included is the character value of
 #' schema_table provided, the column name, the R column type, and the column comments.
+#' @family meta bcdata
+#' @export
 #'
 #' @examples
 #' \dontrun{

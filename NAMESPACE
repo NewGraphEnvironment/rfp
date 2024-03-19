@@ -2,6 +2,7 @@
 
 export("%>%")
 export(rfp_meta_bcd_xref)
+export(rfp_meta_bcd_xref_col_comments)
 export(rfp_source_csv)
 export(rfp_source_url)
 export(rfp_u_rm_gpkg_layers)

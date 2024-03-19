@@ -24,3 +24,9 @@ If they exist, it returns a dataframe with information about the column.
 rfp_meta_bcd_xref_col_comments("whse_imagery_and_base_maps.gsr_airports_svw", "airport_name")
 }
 }
+\seealso{
+Other meta bcdata: 
+\code{\link{rfp_meta_bcd_xref}()},
+\code{\link{rfp_meta_bcd_xref_pkg_schtab}()}
+}
+\concept{meta bcdata}

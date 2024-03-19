@@ -24,6 +24,7 @@ Function to create a lookup table for BC Data Catalogue
 }
 \seealso{
 Other meta bcdata: 
+\code{\link{rfp_meta_bcd_xref_col_comments}()},
 \code{\link{rfp_meta_bcd_xref_pkg_schtab}()}
 }
 \concept{meta bcdata}
