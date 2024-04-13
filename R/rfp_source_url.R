@@ -20,7 +20,7 @@
 #' rfp_source_url(path_gpkg, urls, query)
 #' }
 #' @export
-#' @family source
+#' @family source ogr2ogr gpkg
 #' @importFrom chk chk_string chk_file chk_character
 #' @importFrom tools file_path_sans_ext
 rfp_source_url <- function(path_gpkg, urls, query = NULL) {

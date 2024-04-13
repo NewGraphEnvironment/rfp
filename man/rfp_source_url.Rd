@@ -34,7 +34,7 @@ rfp_source_url(path_gpkg, urls, query)
 }
 }
 \seealso{
-Other source: 
+Other source ogr2ogr gpkg: 
 \code{\link{rfp_source_csv}()}
 }
-\concept{source}
+\concept{source ogr2ogr gpkg}
