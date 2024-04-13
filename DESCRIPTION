@@ -2,9 +2,9 @@ Package: rfp
 Title: Reproducable Field Projects for British Columbia
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+    person("Allan", "Irvine", , "first.last@example.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: Build and document QGIS projects as reproducably as possible.
+Description: Tools to build and document GIS projects and GIS analysis as reproducably as possible.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -19,7 +19,8 @@ Imports:
     purrr,
     sf,
     stringr,
-    tibble
+    tibble,
+    janitor
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
