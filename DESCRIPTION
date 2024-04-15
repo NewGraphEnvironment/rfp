@@ -2,7 +2,7 @@ Package: rfp
 Title: Reproducable Field Projects for British Columbia
 Version: 0.0.0.9000
 Authors@R: 
-    person("Allan", "Irvine", , "al@newgraphenvironment.com", role = c("aut", "cre"),
+    person("Allan", "Irvine", , "info@newgraphenvironment.com", role = c("aut", "cre"),
     comment = c(ORCID = "0000-0002-3495-2128")
 Description: Tools to build and document GIS projects and GIS analysis as reproducably as possible.
 License: MIT + file LICENSE
