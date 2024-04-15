@@ -8,7 +8,7 @@ wshd <- fpr::fpr_db_query(query= "SELECT DISTINCT watershed_group_code, watershe
 # knitr::kable(wshd) Run in Rmarkdown script elsewhere then
 datapasta::tribble_paste()
 
-rfp_xref_fwa_wshd_groups <- tibble::tribble(
+rfp_xref_fwa_wsg <- tibble::tribble(
   ~watershed_group_code,        ~watershed_group_name,
                  "ADMS",                "Adams River",
                  "ALBN",              "Alberni Inlet",
@@ -258,5 +258,5 @@ rfp_xref_fwa_wshd_groups <- tibble::tribble(
                  "ZYMO",              "Zymoetz River"
   )
 
-usethis::use_data(rfp_xref_fwa_wshd_groups, overwrite = TRUE)
+usethis::use_data(rfp_xref_fwa_wsg, overwrite = TRUE)
 
