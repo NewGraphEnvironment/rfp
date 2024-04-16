@@ -3,9 +3,9 @@
 #' This function queries geospatial data from the BC Data Catalogue using a specified record ID. It conditionally
 #' filters the data based on a provided column identifier and value(s),
 #' selects specific columns, cleans the column names. Geometry of object returned can be dropped if desired
-#' @param bcdata_record_id A character string specifying the BC Data Catalogue record ID permanent id (d0e5c8bc-7874-4c48-9c3e-431f772a250e),
-#' name of the record (pscis-assessments) or `object name` (ex. WHSE_FISH.PSCIS_ASSESSMENT_SVW)
-#' can be used and can be found at https://catalogue.data.gov.bc.ca/
+#' @param bcdata_record_id A character string specifying the BC Data Catalogue record ID permanent id (7ecfafa6-5e18-48cd-8d9b-eae5b5ea2881),
+#' name of the record (pscis-assessments) or `object name` (ex. WHSE_FISH.PSCIS_ASSESSMENT_SVW).  The name of the record
+#' can be found at https://catalogue.data.gov.bc.ca/
 #' @param col_extract A character vector specifying which columns to select from the data. Cannot be NULL.
 #' @param drop_geom A logical value indicating whether to drop the geometry column from the `sf` object. Default is FALSE
 #' @param col_filter A character string specifying the column identifier to filter data on.
@@ -22,7 +22,7 @@
 #' @family source bcdata
 #' @examples
 #' \dontrun{
-#' rfp_bcd_get_data(bcdata_record_id = "d0e5c8bc-7874-4c48-9c3e-431f772a250e",
+#' rfp_bcd_get_data(bcdata_record_id = "7ecfafa6-5e18-48cd-8d9b-eae5b5ea2881",
 #' col_filter = 'FUNDING_PROJECT_NUMBER',
 #' col_filter_value = 'skeena_2023_Phase1',
 #' col_extract = c('EXTERNAL_CROSSING_REFERENCE', 'STREAM_CROSSING_ID'),

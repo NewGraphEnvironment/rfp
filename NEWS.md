@@ -1,6 +1,5 @@
 # rfp (development version)
 
-  - add `rfp_xref_fwa_wsg`
   - add `rfp_source_csv.R`
   - add `rfp_source_csv.R`
   - add `rfp_u_rm_gpkg_layers.R`

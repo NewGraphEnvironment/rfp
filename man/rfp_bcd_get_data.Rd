@@ -13,9 +13,9 @@ rfp_bcd_get_data(
 )
 }
 \arguments{
-\item{bcdata_record_id}{A character string specifying the BC Data Catalogue record ID permanent id (d0e5c8bc-7874-4c48-9c3e-431f772a250e),
-name of the record (pscis-assessments) or \verb{object name} (ex. WHSE_FISH.PSCIS_ASSESSMENT_SVW)
-can be used and can be found at https://catalogue.data.gov.bc.ca/}
+\item{bcdata_record_id}{A character string specifying the BC Data Catalogue record ID permanent id (7ecfafa6-5e18-48cd-8d9b-eae5b5ea2881),
+name of the record (pscis-assessments) or \verb{object name} (ex. WHSE_FISH.PSCIS_ASSESSMENT_SVW).  The name of the record
+can be found at https://catalogue.data.gov.bc.ca/}
 
 \item{col_extract}{A character vector specifying which columns to select from the data. Cannot be NULL.}
 
@@ -36,7 +36,7 @@ selects specific columns, cleans the column names. Geometry of object returned c
 }
 \examples{
 \dontrun{
-rfp_bcd_get_data(bcdata_record_id = "d0e5c8bc-7874-4c48-9c3e-431f772a250e",
+rfp_bcd_get_data(bcdata_record_id = "7ecfafa6-5e18-48cd-8d9b-eae5b5ea2881",
 col_filter = 'FUNDING_PROJECT_NUMBER',
 col_filter_value = 'skeena_2023_Phase1',
 col_extract = c('EXTERNAL_CROSSING_REFERENCE', 'STREAM_CROSSING_ID'),
