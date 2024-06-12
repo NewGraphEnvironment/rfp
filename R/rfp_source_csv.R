@@ -17,7 +17,7 @@
 #' @export
 #' @family source ogr2ogr gpkg
 rfp_source_csv <- function(path_gpkg, urls_csv) {
-  if (system("which ogr2ogr", ignore.stdout = TRUE, ignore.stderr = TRUE) != 0) {
+  if (system2("which", args = "ogr2ogr", stdout = FALSE, stderr = FALSE) != 0) {
     stop("ogr2ogr is not available. Please install GDAL.")
   }
   chk::chk_string(path_gpkg)
