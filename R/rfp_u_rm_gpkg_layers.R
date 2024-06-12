@@ -1,5 +1,10 @@
 #' Remove Specified Layers from a GeoPackage
 #'
+#' @description
+#' `r lifecycle::badge("superseded")`
+#'
+#' `rfp_u_rm_gpkg_layers()` has been superseded in favour of [gdalraster::ogr_layer_delete()](https://github.com/USDAForestService/gdalraster)
+#'
 #' This function removes specified layers from a GeoPackage by listing all layers
 #' using `sf::st_layers`, then recreating the GeoPackage without the specified layers
 #' using `ogr2ogr` commands executed via `system2`.
@@ -12,7 +17,7 @@
 #' \dontrun{
 #'   path_gpkg <- "path/to/your.gpkg"
 #'   layers_remove <- c("layer_to_remove1", "layer_to_remove2")
-#'   remove_gpkg_layers(path_gpkg, layers_remove)
+#'   rfp_u_rm_gpkg_layers(path_gpkg, layers_remove)
 #' }
 #' @importFrom sf st_layers
 #' @importFrom chk chk_string chk_file chk_character
@@ -21,16 +26,9 @@
 #' @export
 #' @family utils
 rfp_u_rm_gpkg_layers <- function(path_gpkg, layers_remove) {
-  if (!requireNamespace("sf", quietly = TRUE)) {
-    stop("sf package is not installed. Please install it using install.packages('sf').")
-  }
-
-  # Ensure 'cli' and 'glue' packages are also available
-  if (!requireNamespace("cli", quietly = TRUE)) {
-    stop("The 'cli' package is not installed. Please install it using install.packages('cli').")
-  }
-  if (!requireNamespace("glue", quietly = TRUE)) {
-    stop("The 'glue' package is not installed. Please install it using install.packages('glue').")
+  # ensure that gdal is installed
+  if (system2("which", args = "ogr2ogr", stdout = FALSE, stderr = FALSE) != 0) {
+    cli::cli_abort("The `ogr2ogr` function requires GDAL. Please install GDAL first.\nYou can install GDAL on a Mac using Homebrew")
   }
 
   chk::chk_string(path_gpkg)

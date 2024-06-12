@@ -15,6 +15,10 @@ rfp_u_rm_gpkg_layers(path_gpkg, layers_remove)
 Invisible NULL, indicating the function is used for its side effects.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#superseded}{\figure{lifecycle-superseded.svg}{options: alt='[Superseded]'}}}{\strong{[Superseded]}}
+
+\code{rfp_u_rm_gpkg_layers()} has been superseded in favour of \href{https://github.com/USDAForestService/gdalraster}{gdalraster::ogr_layer_delete()}
+
 This function removes specified layers from a GeoPackage by listing all layers
 using \code{sf::st_layers}, then recreating the GeoPackage without the specified layers
 using \code{ogr2ogr} commands executed via \code{system2}.
@@ -23,7 +27,7 @@ using \code{ogr2ogr} commands executed via \code{system2}.
 \dontrun{
   path_gpkg <- "path/to/your.gpkg"
   layers_remove <- c("layer_to_remove1", "layer_to_remove2")
-  remove_gpkg_layers(path_gpkg, layers_remove)
+  rfp_u_rm_gpkg_layers(path_gpkg, layers_remove)
 }
 }
 \concept{utils}
