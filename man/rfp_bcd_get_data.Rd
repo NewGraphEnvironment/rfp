@@ -15,16 +15,18 @@ rfp_bcd_get_data(
 \arguments{
 \item{bcdata_record_id}{A character string specifying the BC Data Catalogue record ID permanent id (7ecfafa6-5e18-48cd-8d9b-eae5b5ea2881),
 name of the record (pscis-assessments) or \verb{object name} (ex. WHSE_FISH.PSCIS_ASSESSMENT_SVW).  The name of the record
-can be found at https://catalogue.data.gov.bc.ca/}
+can be found at https://catalogue.data.gov.bc.ca/.  This does not need to be in capitals as we will convert to capitals
+within the function.}
 
 \item{col_extract}{A character vector specifying which columns to select from the data. Cannot be NULL.}
 
 \item{drop_geom}{A logical value indicating whether to drop the geometry column from the \code{sf} object. Default is FALSE}
 
-\item{col_filter}{A character string specifying the column identifier to filter data on.}
+\item{col_filter}{A character string specifying the column identifier to filter data on. If NULL (default), no filtering is applied.
+Colunn name will be converted to upper case if supplied in other format.}
 
 \item{col_filter_value}{A character or character vector specifying the values to filter \code{col_filter} by.
-If NULL (default), no filtering on \code{col_filter} is applied.}
+If NULL (default), no filtering on \code{col_filter} is applied.olunn name will be converted to upper case if supplied in other format.}
 }
 \value{
 A data frame with cleaned names and optionally an \code{sf} object.

@@ -5,12 +5,14 @@
 #' selects specific columns, cleans the column names. Geometry of object returned can be dropped if desired
 #' @param bcdata_record_id A character string specifying the BC Data Catalogue record ID permanent id (7ecfafa6-5e18-48cd-8d9b-eae5b5ea2881),
 #' name of the record (pscis-assessments) or `object name` (ex. WHSE_FISH.PSCIS_ASSESSMENT_SVW).  The name of the record
-#' can be found at https://catalogue.data.gov.bc.ca/
+#' can be found at https://catalogue.data.gov.bc.ca/.  This does not need to be in capitals as we will convert to capitals
+#' within the function.
 #' @param col_extract A character vector specifying which columns to select from the data. Cannot be NULL.
 #' @param drop_geom A logical value indicating whether to drop the geometry column from the `sf` object. Default is FALSE
-#' @param col_filter A character string specifying the column identifier to filter data on.
+#' @param col_filter A character string specifying the column identifier to filter data on. If NULL (default), no filtering is applied.
+#' Colunn name will be converted to upper case if supplied in other format.
 #' @param col_filter_value A character or character vector specifying the values to filter `col_filter` by.
-#' If NULL (default), no filtering on `col_filter` is applied.
+#' If NULL (default), no filtering on `col_filter` is applied.olunn name will be converted to upper case if supplied in other format.
 #' @return A data frame with cleaned names and optionally an `sf` object.
 #' @seealso \code{\link{rfp_meta_bcd_xref}} for a function that extracts metadata from the BC Data Catalogue.
 #' @importFrom bcdata bcdc_query_geodata
@@ -19,6 +21,7 @@
 #' @importFrom sf st_drop_geometry
 #' @importFrom glue glue
 #' @importFrom chk chk_string chk_character
+#' @importFrom rlang sym
 #' @family source bcdata
 #' @examples
 #' \dontrun{
@@ -58,6 +61,17 @@ rfp_bcd_get_data <- function(
     cli::cli_abort(message = "col_filter_value cannot be NULL when col_filter is provided.")
   }
 
+  # convert column names and bc_record_id to uppercase
+  bcdata_record_id <- stringr::str_to_upper(bcdata_record_id)
+
+  if(!is.null(col_filter)){
+    col_filter <- stringr::str_to_upper(col_filter)
+    }
+
+  if(!is.null(col_extract)){
+    col_extract <- stringr::str_to_upper(col_extract)
+  }
+
   # if no col_filter and col_extract given then return all columns of all records
   if(is.null(col_filter) && is.null(col_extract)) {
     x <- bcdata::bcdc_query_geodata(bcdata_record_id) |>
@@ -67,7 +81,7 @@ rfp_bcd_get_data <- function(
   # if no col_extract given and col_filter and col_filter_value given return all columns of filtered record
   if(is.null(col_extract) && !is.null(col_filter)) {
     x <- bcdata::bcdc_query_geodata(bcdata_record_id) |>
-      dplyr::filter(!!sym(col_filter) %in% col_filter_value) |>
+      dplyr::filter(!!rlang::sym(col_filter) %in% col_filter_value) |>
       bcdata::collect()
 
     if (nrow(x) == 0) {
@@ -79,7 +93,7 @@ rfp_bcd_get_data <- function(
   # if col_filter and col_extract given then filter on col_filter and select col_extract
   if(!is.null(col_extract) && !is.null(col_filter)){
     x <- bcdata::bcdc_query_geodata(bcdata_record_id) |>
-      dplyr::filter(!!sym(col_filter) %in% col_filter_value) |>
+      dplyr::filter(!!rlang::sym(col_filter) %in% col_filter_value) |>
       bcdata::collect() |>
       dplyr::select(all_of(col_extract))
 
@@ -101,7 +115,8 @@ rfp_bcd_get_data <- function(
       cli::cli_abort(glue::glue("No records found. Please check if the `{col_extract}` with the specified value(s)
                               exists in the BC Data Catalogue table or adjust your query."))
   }
-}
+  }
+
 
 x <- x %>%
   janitor::clean_names()
