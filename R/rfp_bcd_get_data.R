@@ -22,6 +22,7 @@
 #' @importFrom glue glue
 #' @importFrom chk chk_string chk_character
 #' @importFrom rlang sym
+#' @importFrom stringr str_to_upper str_to_lower
 #' @family source bcdata
 #' @examples
 #' \dontrun{
@@ -61,9 +62,16 @@ rfp_bcd_get_data <- function(
     cli::cli_abort(message = "col_filter_value cannot be NULL when col_filter is provided.")
   }
 
-  # convert column names and bc_record_id to uppercase
-  bcdata_record_id <- stringr::str_to_upper(bcdata_record_id)
+  # Check if there is a period in the input string to deal with capitilization issues
+  if (grepl("\\.", bcdata_record_id)) {
+    # Convert to uppercase if there is a period
+    bcdata_record_id <- stringr::str_to_upper(bcdata_record_id)
+  } else {
+    # Convert to lowercase if there is no period
+    bcdata_record_id <- stringr::str_to_lower(bcdata_record_id)
+  }
 
+  # convert column names to uppercase
   if(!is.null(col_filter)){
     col_filter <- stringr::str_to_upper(col_filter)
     }
