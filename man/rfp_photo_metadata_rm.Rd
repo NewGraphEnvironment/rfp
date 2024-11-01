@@ -4,7 +4,7 @@
 \alias{rfp_photo_metadata_rm}
 \title{Remove Metadata from a Photo}
 \usage{
-rfp_photo_metadata_rm(path_photo, overwrite_original = TRUE)
+rfp_photo_metadata_rm(path_photo, overwrite_original = TRUE, log_output = TRUE)
 }
 \arguments{
 \item{path_photo}{A character string specifying the path to the photo file.}
@@ -12,6 +12,8 @@ rfp_photo_metadata_rm(path_photo, overwrite_original = TRUE)
 \item{overwrite_original}{A logical value indicating whether to overwrite
 the original photo file (default is \code{TRUE}). If \code{FALSE}, a backup
 file with the suffix \verb{_original} will be created.}
+
+\item{log_output}{Optionally produce tibble of log output (default is \code{TRUE})}
 }
 \value{
 None. The function modifies the specified file by removing its metadata.
@@ -24,9 +26,13 @@ Optionally, it can overwrite the original file or create a backup.
 \dontrun{
   rfp_photo_metadata_rm("path/to/photo.jpg")
 
-  or many at the same time
+  # many at the same time with no logging
 
-  list_of_photo_paths |> purrr::walk(rfp_photo_metadata_rm)
+  list_of_photo_paths |> purrr::walk(rfp_photo_metadata_rm, log_output = FALSE)
+
+  # many at the same time with logging
+
+  log_df <- list_of_photo_paths |> purrr::map_dfr(rfp_photo_metadata_rm)
 }
 }
 \concept{photos}
