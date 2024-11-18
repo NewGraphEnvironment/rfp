@@ -50,7 +50,7 @@ rfp_bcd_get_data <- function(
   }
 
   if (!is.null(col_filter_value)) {
-    chk::chk_string(col_filter_value)
+    chk::chk_character(col_filter_value)
   }
 
   if(!is.null(col_extract)){
