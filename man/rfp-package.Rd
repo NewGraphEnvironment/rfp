@@ -8,6 +8,13 @@
 \description{
 Tools to build and document GIS projects and GIS analysis as reproducably as possible.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{http://www.newgraphenvironment.com/rfp/}
+}
+
+}
 \author{
 \strong{Maintainer}: Allan Irvine \email{info@newgraphenvironment.com} (\href{https://orcid.org/0000-0002-3495-2128}{ORCID})
 
