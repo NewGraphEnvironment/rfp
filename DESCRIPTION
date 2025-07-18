@@ -7,7 +7,7 @@ Description: Tools to build and document GIS projects and GIS analysis as reprod
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2.9000
 Imports:
     bcdata,
     chk,
